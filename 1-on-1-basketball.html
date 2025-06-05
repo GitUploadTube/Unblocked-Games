@@ -23,6 +23,14 @@
             flex-direction: column;
             text-align: center;
             overflow: hidden;
+            position: relative;
+        }
+
+        /* Game Title */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-out;
         }
 
         /* Game Title Image */
@@ -43,10 +51,12 @@
 
         /* Fullscreen Icon */
         .fullscreen-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
             width: 40px;
             height: 40px;
             cursor: pointer;
-            margin-top: 20px;
             transition: transform 0.3s ease;
         }
 
@@ -96,7 +106,7 @@
     </style>
 </head>
 <body>
-    <!-- Game Title Image -->
+    <!-- Game Title -->
     <h1>1 On 1 Basketball</h1>
 
     <!-- Fullscreen Button -->
@@ -112,7 +122,6 @@
         // Fullscreen toggle function
         document.getElementById('fullscreen-btn').addEventListener('click', function() {
             const iframe = document.getElementById('game-frame');
-            const doc = iframe.contentDocument || iframe.contentWindow.document;
 
             if (iframe.requestFullscreen) {
                 iframe.requestFullscreen();
