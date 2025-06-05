@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblocked Games</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Game Title */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        /* Game Title Image */
+        .header-img {
+            width: 300px;
+            height: auto;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        /* Description Text */
+        p {
+            font-size: 1.25rem;
+            color: #333;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s 0.5s forwards;
+        }
+
+        /* Fullscreen Icon */
+        .fullscreen-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .fullscreen-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animation Effects */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Image Button Styling */
+        .play-btn {
+            background: url('https://example.com/play-button.png') no-repeat center center/contain;
+            width: 250px;
+            height: 70px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .play-btn:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Game Title -->
+    <h1>1 On 1 Hockey</h1>
+
+    <!-- Fullscreen Button -->
+    <img src="https://www.svgrepo.com/show/343671/fullscreen.svg" alt="Fullscreen" class="fullscreen-btn" id="fullscreen-btn">
+
+    <!-- Game iframe -->
+    <iframe id="game-frame" src="https://gituploadtube.github.io/Unblocked-Games/url/s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%252F1-on-1-hockey.xml&container=ig.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="648px" width="1151px" allowfullscreen></iframe>
+
+    <!-- Description -->
+    <p>Hit the ice with 1 On 1 Hockey Unblocked at Classroom 6x Unblocked Games! Take on your friends or the computer in a high-energy hockey battle. Skate, pass, and shoot your way to victory in this thrilling one-on-one matchup. With smooth controls and intense gameplay, 1 On 1 Hockey Unblocked is the perfect game for hockey fans looking for fast-paced fun. Lace up your skates and see if you have what it takes to dominate the rink!</p>
+
+    <script>
+        // Fullscreen toggle function
+        document.getElementById('fullscreen-btn').addEventListener('click', function() {
+            const iframe = document.getElementById('game-frame');
+
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
