@@ -1,94 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unblocked Games</title>
-    <style>
-        /* Global Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unblocked Games</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            text-align: center;
-            overflow: hidden;
-        }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
 
-        /* Game Title Image */
-        .header-img {
-            width: 300px;
-            height: auto;
-            animation: slideIn 1.5s ease-out;
-        }
+    h1 {
+      animation: slideIn 1.5s ease-out;
+    }
 
-        /* Description Text */
-        p {
-            font-size: 1.25rem;
-            color: #333;
-            margin-top: 20px;
-            opacity: 0;
-            animation: fadeIn 2s 0.5s forwards;
-        }
+    p {
+      font-size: 1.25rem;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2s 0.5s forwards;
+    }
 
-        /* Animation Effects */
-        @keyframes slideIn {
-            0% {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
+    @keyframes slideIn {
+      0% { transform: translateY(-50px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
 
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
 
-        /* Image Button Styling */
-        .play-btn {
-            background: url('https://example.com/play-button.png') no-repeat center center/contain;
-            width: 250px;
-            height: 70px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+    .game-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
 
-        .play-btn:hover {
-            transform: scale(1.1);
-        }
+    .game-item {
+      text-decoration: none;
+      color: inherit;
+      width: 260px;
+      transition: transform 0.3s ease;
+    }
 
-        .play-btn:focus {
-            outline: none;
-        }
-    </style>
+    .game-item:hover {
+      transform: scale(1.05);
+    }
+
+    .game-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .game-name {
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-    <!-- Game Title Image -->
-    <h1>Unblocked Games</h1>
+  <h1>Unblocked Games</h1>
+  <p>Welcome to the ultimate gaming hub! No limits, just fun.</p>
 
-    <!-- Description -->
-    <p>Welcome to the ultimate gaming hub! No limits, just fun.</p>
-<a href="1-on-1-basketball.html" data-id="3"><img src="IkI1nkdNER-WNvZVff_MmclippXcZGRBIKtE5Y11qVjs3TNKpMOQxcLJGBdOjQSPo0MhCO1HjGD2NR2Y4TPX532AS2C7PyUts_50OaPRcixX=s2048 (3).png" id="game-item-3" alt="1 On 1 Basketball" width="512" height="384"><span class="remove"></span><div class="game-name">1 On 1 Basketball</div></a>
-    <a href="1-on-1-football.html" data-id="3"><img src="D0M06wAN6zTkSP7olRCkJ4zhNk_HP0xKu_KLyzQ9bjcQTncQ6xsPrpXsj4l-CKqcVVvcpGmpvqof8MI6ixFv3zje3dYcp1Lor8WeVXHdfBcD=s2048 (2).png" id="game-item-3" alt="1 On 1 Football" width="512" height="384"><span class="remove"></span><div class="game-name">1 On 1 Football</div></a>
-        <a href="1-on-1-hockey.html" data-id="3"><img src="LSlKKo18I-KlIoTxJd7ZiZa0MxPNI1111E5FZad8Dgdamxoc6DZRu93LR5S7aA5_HqfWGIFGJxPd-vcUW2Cd4Rw4Ude7igwx-dQrVpBaq7Ve=s2048 (1).png" id="game-item-3" alt="1 On 1 Hockey" width="512" height="384"><span class="remove"></span><div class="game-name">1 On 1 Hockey</div></a>
+  <div class="game-list">
+    <a href="1-on-1-basketball.html" class="game-item">
+      <img src="https://raw.githubusercontent.com/GitUploadTube/Unblocked-Games/main/images/IkI1nkdNER-WNvZVff_MmclippXcZGRBIKtE5Y11qVjs3TNKpMOQxcLJGBdOjQSPo0MhCO1HjGD2NR2Y4TPX532AS2C7PyUts_50OaPRcixX=s2048.png" alt="1 On 1 Basketball">
+      <div class="game-name">1 On 1 Basketball</div>
+    </a>
+    <a href="1-on-1-football.html" class="game-item">
+      <img src="https://raw.githubusercontent.com/GitUploadTube/Unblocked-Games/main/images/D0M06wAN6zTkSP7olRCkJ4zhNk_HP0xKu_KLyzQ9bjcQTncQ6xsPrpXsj4l-CKqcVVvcpGmpvqof8MI6ixFv3zje3dYcp1Lor8WeVXHdfBcD=s2048.png" alt="1 On 1 Football">
+      <div class="game-name">1 On 1 Football</div>
+    </a>
+    <a href="1-on-1-hockey.html" class="game-item">
+      <img src="https://raw.githubusercontent.com/GitUploadTube/Unblocked-Games/main/images/LSlKKo18I-KlIoTxJd7ZiZa0MxPNI1111E5FZad8Dgdamxoc6DZRu93LR5S7aA5_HqfWGIFGJxPd-vcUW2Cd4Rw4Ude7igwx-dQrVpBaq7Ve=s2048.png" alt="1 On 1 Hockey">
+      <div class="game-name">1 On 1 Hockey</div>
+    </a>
+  </div>
 </body>
 </html>
