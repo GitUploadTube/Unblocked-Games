@@ -4,7 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Unblocked Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-color: #0d0d0d;
+      --text-color: #f5f5f5;
+      --accent: #ff4081;
+      --card-bg: #1a1a1a;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -12,127 +20,134 @@
     }
 
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      font-family: 'Rubik', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      padding: 2rem;
       display: flex;
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
-      min-height: 100vh;
-      text-align: center;
-      padding: 20px;
+      align-items: center;
     }
 
     h1 {
-      animation: slideIn 1.5s ease-out;
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
     }
 
     p {
-      font-size: 1.25rem;
-      margin-top: 20px;
-      opacity: 0;
-      animation: fadeIn 2s 0.5s forwards;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: #ccc;
     }
 
-    @keyframes slideIn {
-      0% { transform: translateY(-50px); opacity: 0; }
-      100% { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; }
-      100% { opacity: 1; }
-    }
-
-    .game-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 20px;
-      margin-top: 30px;
-    }
-
-    .game-item {
-      text-decoration: none;
-      color: inherit;
-      width: 260px;
-      transition: transform 0.3s ease;
-    }
-
-    .game-item:hover {
-      transform: scale(1.05);
-    }
-
-    .game-item img {
       width: 100%;
-      height: auto;
-      border-radius: 10px;
+      max-width: 1400px;
     }
 
-    .game-name {
-      margin-top: 10px;
+    .game-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .game-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px var(--accent);
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .game-title {
+      padding: 1rem;
+      font-weight: 600;
+      text-align: center;
       font-size: 1rem;
-      font-weight: bold;
+    }
+
+    .tooltip {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.75);
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .game-card:hover .tooltip {
+      opacity: 1;
+    }
+
+    .highlight {
+      outline: 2px solid var(--accent);
+      box-shadow: 0 0 25px var(--accent);
     }
   </style>
 </head>
 <body>
   <h1>Unblocked Games</h1>
-  <p>Welcome to the ultimate gaming hub! No limits, just fun.</p>
+  <p>Click any game to begin your adventure!</p>
 
-  <div class="game-list">
-    <a href="1-on-1-basketball.html" class="game-item">
-      <img src="https://github.com/GitUploadTube/Unblocked-Games/blob/main/IkI1nkdNER-WNvZVff_MmclippXcZGRBIKtE5Y11qVjs3TNKpMOQxcLJGBdOjQSPo0MhCO1HjGD2NR2Y4TPX532AS2C7PyUts_50OaPRcixX=s2048%20(3).png?raw=true" alt="1 On 1 Basketball">
-      <div class="game-name">1 On 1 Basketball</div>
-    </a>
-    <a href="1-on-1-football.html" class="game-item">
-      <img src="https://github.com/GitUploadTube/Unblocked-Games/blob/main/D0M06wAN6zTkSP7olRCkJ4zhNk_HP0xKu_KLyzQ9bjcQTncQ6xsPrpXsj4l-CKqcVVvcpGmpvqof8MI6ixFv3zje3dYcp1Lor8WeVXHdfBcD=s2048%20(2).png?raw=true" alt="1 On 1 Football">
-      <div class="game-name">1 On 1 Football</div>
-    </a>
-    <a href="1-on-1-hockey.html" class="game-item">
-      <img src="https://github.com/GitUploadTube/Unblocked-Games/blob/main/LSlKKo18I-KlIoTxJd7ZiZa0MxPNI1111E5FZad8Dgdamxoc6DZRu93LR5S7aA5_HqfWGIFGJxPd-vcUW2Cd4Rw4Ude7igwx-dQrVpBaq7Ve=s2048%20(1).png?raw=true" alt="1 On 1 Hockey">
-      <div class="game-name">1 On 1 Hockey</div>
-    </a>
-        <a href="1-on-1-soccer" class="game-item">
-      <img src="https://github.com/GitUploadTube/Unblocked-Games/blob/main/xIOxTFMRveFyBMMan35ptpG8DJ9CWvvAj3g5biJVgwN8puFxCt8pA3Hr2Y5s2BbwhGP0Z0FZhCOrD8MOqXimLsAGTXWvTkUR34gyzszfl4AovbNYNQLJFxGqnQLtKo8gndGZxs9DIYd0Jm3fOBkHFOyooObN=s2048.jpg?raw=true" alt="1 On 1 Hockey">
-      <div class="game-name">1 On 1 Soccer</div>
-    </a>
-            <a href="1-on-1-soccer-brazil" class="game-item">
-      <img src="https://github.com/GitUploadTube/Unblocked-Games/blob/main/1-on-1-soocer-brazil.png?raw=true" alt="1 On 1 Hockey">
-      <div class="game-name">1 On 1 Soccer Brazil</div>
-    </a>
-                <a href="1-on-1-tennis" class="game-item">
-      <img src="https://github.com/GitUploadTube/Unblocked-Games/blob/main/6ftpjFBi4J_iNa9iNkMosu4BIEm76tgF9NCl9-l0ZVRoTJhc4goMS9tW8X8QnFbOP9uNAZPVPhpfgD9-0k2Pt2q2med0vqHY3UjvMU5sShHhySED0iYDK7MI02IyYu3lMw=w1280.png?raw=true" alt="1 On 1 Hockey">
-      <div class="game-name">1 On 1 Tennis</div>
-    </a>
-                    <a href="1-on-1-basketball-230114-by-230114" class="game-item">
-      <img src="https://cdn2.scratch.mit.edu/get_image/project/27192346_480x360.png" alt="1 on 1 Basketball 230114 by 230114">
-      <div class="game-name">1 on 1 Basketball 230114 by 230114</div>
-    </a>
-                            <a href="among-us.html" class="game-item">
-      <img src="https://github.com/GitUploadTube/Unblocked-Games/raw/refs/heads/main/among-us.webp" alt="Among Us">
-      <div class="game-name">Among Us</div>
-    </a>
-                                <a href="slope-3d" class="game-item">
-      <img src="https://github.com/GitUploadTube/Unblocked-Games/blob/main/Screenshot%202025-06-16%20204656.png?raw=true" alt="Slope 3D">
-      <div class="game-name">Slope 3D</div>
-    </a>
-                                    <a href="baldis-basics" class="game-item">
-      <img src="https://github.com/GitUploadTube/Unblocked-Games/blob/main/OIP.jpg?raw=true" alt="Baldi's Basics">
-      <div class="game-name">Baldi's Basics</div>
-    </a>                                                                          <a href="eaglercraft-1.5.2.html" class="game-item">
-      <img src="https://github.com/GitUploadTube/Unblocked-Games/blob/main/OIP%20(1).jpg?raw=true" alt="Eaglercraft 1.5.2">
-      <div class="game-name">Eaglercraft 1.5.2</div>
-          </a>
-        </a>                                                                          <a href="eaglercraft-indev" class="game-item">
-      <img src="https://github.com/GitUploadTube/Unblocked-Games/blob/main/Screenshot%202025-06-16%20221444.png?raw=true" alt="Eaglercraft Indev">
-      <div class="game-name">Eaglercraft Indev</div>
-          </a>
-                                                                              <a href="darkness-survivors" class="game-item">
-      <img src="https://github.com/GitUploadTube/Unblocked-Games/blob/main/Untitled%20(7).png?raw=true" alt="Darkness Survivors">
-      <div class="game-name">Darkness Survivors</div>
-          </a>
+  <div class="game-grid" id="gameGrid">
+    <!-- Game cards will go here -->
   </div>
+
+  <script>
+    const games = [
+      { title: "1 On 1 Basketball", url: "1-on-1-basketball.html", img: "https://github.com/GitUploadTube/Unblocked-Games/blob/main/IkI1nkdNER-WNvZVff_MmclippXcZGRBIKtE5Y11qVjs3TNKpMOQxcLJGBdOjQSPo0MhCO1HjGD2NR2Y4TPX532AS2C7PyUts_50OaPRcixX=s2048%20(3).png?raw=true" },
+      { title: "1 On 1 Football", url: "1-on-1-football.html", img: "https://github.com/GitUploadTube/Unblocked-Games/blob/main/D0M06wAN6zTkSP7olRCkJ4zhNk_HP0xKu_KLyzQ9bjcQTncQ6xsPrpXsj4l-CKqcVVvcpGmpvqof8MI6ixFv3zje3dYcp1Lor8WeVXHdfBcD=s2048%20(2).png?raw=true" },
+      { title: "1 On 1 Hockey", url: "1-on-1-hockey.html", img: "https://github.com/GitUploadTube/Unblocked-Games/blob/main/LSlKKo18I-KlIoTxJd7ZiZa0MxPNI1111E5FZad8Dgdamxoc6DZRu93LR5S7aA5_HqfWGIFGJxPd-vcUW2Cd4Rw4Ude7igwx-dQrVpBaq7Ve=s2048%20(1).png?raw=true" },
+      { title: "1 On 1 Soccer", url: "1-on-1-soccer", img: "https://github.com/GitUploadTube/Unblocked-Games/blob/main/xIOxTFMRveFyBMMan35ptpG8DJ9CWvvAj3g5biJVgwN8puFxCt8pA3Hr2Y5s2BbwhGP0Z0FZhCOrD8MOqXimLsAGTXWvTkUR34gyzszfl4AovbNYNQLJFxGqnQLtKo8gndGZxs9DIYd0Jm3fOBkHFOyooObN=s2048.jpg?raw=true" },
+      { title: "1 On 1 Soccer Brazil", url: "1-on-1-soccer-brazil", img: "https://github.com/GitUploadTube/Unblocked-Games/blob/main/1-on-1-soocer-brazil.png?raw=true" },
+      { title: "1 On 1 Tennis", url: "1-on-1-tennis", img: "https://github.com/GitUploadTube/Unblocked-Games/blob/main/6ftpjFBi4J_iNa9iNkMosu4BIEm76tgF9NCl9-l0ZVRoTJhc4goMS9tW8X8QnFbOP9uNAZPVPhpfgD9-0k2Pt2q2med0vqHY3UjvMU5sShHhySED0iYDK7MI02IyYu3lMw=w1280.png?raw=true" },
+      { title: "1 on 1 Basketball 230114 by 230114", url: "1-on-1-basketball-230114-by-230114", img: "https://cdn2.scratch.mit.edu/get_image/project/27192346_480x360.png" },
+      { title: "Among Us", url: "among-us.html", img: "https://github.com/GitUploadTube/Unblocked-Games/raw/refs/heads/main/among-us.webp" },
+      { title: "Slope 3D", url: "slope-3d", img: "https://github.com/GitUploadTube/Unblocked-Games/blob/main/Screenshot%202025-06-16%20204656.png?raw=true" },
+      { title: "Baldi's Basics", url: "baldis-basics", img: "https://github.com/GitUploadTube/Unblocked-Games/blob/main/OIP.jpg?raw=true" },
+      { title: "Eaglercraft 1.5.2", url: "eaglercraft-1.5.2.html", img: "https://github.com/GitUploadTube/Unblocked-Games/blob/main/OIP%20(1).jpg?raw=true" },
+      { title: "Eaglercraft Indev", url: "eaglercraft-indev", img: "https://github.com/GitUploadTube/Unblocked-Games/blob/main/Screenshot%202025-06-16%20221444.png?raw=true" },
+      { title: "Darkness Survivors", url: "darkness-survivors", img: "https://github.com/GitUploadTube/Unblocked-Games/blob/main/Untitled%20(7).png?raw=true" },
+    ];
+
+    const gameGrid = document.getElementById("gameGrid");
+
+    games.forEach(game => {
+      const card = document.createElement("a");
+      card.href = game.url;
+      card.className = "game-card";
+      card.innerHTML = `
+        <img src="${game.img}" alt="${game.title}" />
+        <div class="game-title">${game.title}</div>
+        <div class="tooltip">Click to play!</div>
+      `;
+      gameGrid.appendChild(card);
+    });
+
+    setInterval(() => {
+      document.querySelectorAll(".game-card").forEach(c => c.classList.remove("highlight"));
+      const cards = document.querySelectorAll(".game-card");
+      if (cards.length > 0) {
+        const random = cards[Math.floor(Math.random() * cards.length)];
+        random.classList.add("highlight");
+      }
+    }, 5000);
+  </script>
 </body>
 </html>
