@@ -1,17 +1,16 @@
-// Original XML URL
+// Your XML link
 const originalXmlUrl = "https://rawcdn.githack.com/LupineVault/imageopensocial/20852f48f9c6f6d059c7f3412ab995dace558aaf/rn3.xml";
 
-// Function to convert the XML URL to the required format
+// Converts to loader format for gituploadtube
 function generateLoaderUrl(xmlUrl) {
-  // Replace all '/' with '?'
-  const encodedDomain = xmlUrl.replace(/\//g, "?");
-  // Final redirector format
-  return `https://gituploadtube.github.io/Unblocked-Games/url?domain=${encodedDomain}&container=ig.html`;
+  const encoded = xmlUrl.replace(/\//g, "?");
+  return `https://gituploadtube.github.io/Unblocked-Games/url?domain=${encoded}&container=ig.html`;
 }
 
-// Example usage:
+// Generate and use it
 const finalUrl = generateLoaderUrl(originalXmlUrl);
-console.log("Loadable URL:", finalUrl);
+console.log("Loader URL:", finalUrl);
+alert("Redirecting to:\n" + finalUrl);
 
-// Optionally, redirect the browser to it:
+// Optional: Automatically go to the loader
 window.location.href = finalUrl;
