@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblocked Games</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Game Title */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        /* Game Title Image */
+        .header-img {
+            width: 300px;
+            height: auto;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        /* Description Text */
+        p {
+            font-size: 1.25rem;
+            color: #333;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s 0.5s forwards;
+        }
+
+        /* Fullscreen Icon */
+        .fullscreen-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .fullscreen-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animation Effects */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Image Button Styling */
+        .play-btn {
+            background: url('https://example.com/play-button.png') no-repeat center center/contain;
+            width: 250px;
+            height: 70px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .play-btn:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Game Title -->
+    <h1>Slope 3D</h1>
+
+    <!-- Fullscreen Button -->
+    <img src="https://www.svgrepo.com/show/343671/fullscreen.svg" alt="Fullscreen" class="fullscreen-btn" id="fullscreen-btn">
+
+    <!-- Game iframe -->
+    <iframe id="game-frame" src="https://f3.silvergames.com/m/slope-3d/" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="648px" width="1151px" allowfullscreen></iframe>
+
+    <!-- Description -->
+    <p>Join the 3D world of ball rolling game in Slope 3D. Steer and navigate the ball precisely to dodge obstacles and achieve a high score. It's a perfect casual game that provides a great reflex test.
+
+How to play Slope 3D
+In this game, players roll a ball in an endless slope setting. The main objective is to get the ball to go far and earn a high score. To keep the ball safe in the journey, you need to steer it and avoid hitting obstacles. The setting is similar to the original Slope game. However, there are diamonds to collect and three different types of power-ups to use.
+
+Of course, these power-ups can help you go far in the game. You can get your hands on them at the Shop and activate them at any time in the game. These power-ups only last for a short period of time. So use them wisely. The number of times that you can use each feature will be shown at the bottom right corner of each power-up box.
+
+Shield: Protect you from obstacles.
+
+Magnet: Collect nearby diamonds easily.
+
+x2 Diamonds: Double the number of diamonds you've earned.
+
+Plus, there are 8 different balls that you can get at the Shop. It costs different numbers of diamonds also.
+
+Controls
+The controls are simple:
+
+Press the A or D or Left or Right arrows on the keyboard to navigate the ball.
+
+Press J to use the Shield.
+
+Press K to use the Diamond Magnet.
+
+Press L to use x2 Diamonds.
+
+The ball keeps moving forward and down the steep slopes. You have to anticipate the challenges and react quickly to survive. There are also many long gaps that requires you to step on the speed-up hills to pass through.
+
+Features
+8 unique balls to unlock
+3 types of power-ups
+Addictive and simple gameplay
+Simple ball controls
+Slope 3D is a cool variation of the Slope game. It keeps the main game mechanics and brings different ball skins and power-ups.</p>
+
+    <script>
+        // Fullscreen toggle function
+        document.getElementById('fullscreen-btn').addEventListener('click', function() {
+            const iframe = document.getElementById('game-frame');
+
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
