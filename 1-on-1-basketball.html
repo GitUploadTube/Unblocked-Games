@@ -1,138 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unblocked Games</title>
-    <style>
-        /* Global Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>1 On 1 Basketball | Unblocked Games</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-color: #0d0d0d;
+      --text-color: #f5f5f5;
+      --accent: #ff4081;
+      --card-bg: #1a1a1a;
+      --desc-color: #ccc;
+      --btn-hover: #ff79a7;
+    }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            flex-direction: column;
-            text-align: center;
-            overflow: hidden;
-            position: relative;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Game Title */
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            animation: slideIn 1.5s ease-out;
-        }
+    body {
+      font-family: 'Rubik', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
 
-        /* Game Title Image */
-        .header-img {
-            width: 300px;
-            height: auto;
-            animation: slideIn 1.5s ease-out;
-        }
+    h1 {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+      animation: slideIn 1.5s ease forwards;
+    }
 
-        /* Description Text */
-        p {
-            font-size: 1.25rem;
-            color: #333;
-            margin-top: 20px;
-            opacity: 0;
-            animation: fadeIn 2s 0.5s forwards;
-        }
+    p.description {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 1rem auto 2rem;
+      color: var(--desc-color);
+      line-height: 1.5;
+      opacity: 0;
+      animation: fadeIn 2s 0.6s forwards;
+    }
 
-        /* Fullscreen Icon */
-        .fullscreen-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+    /* Fullscreen & Expand Buttons */
+    .btn-group {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+      z-index: 1000;
+    }
 
-        .fullscreen-btn:hover {
-            transform: scale(1.1);
-        }
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      cursor: pointer;
+      transition: transform 0.3s ease, filter 0.3s ease;
+      filter: invert(1);
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+    .icon-btn:hover {
+      transform: scale(1.2);
+      filter: invert(0.8) sepia(1) saturate(5) hue-rotate(320deg);
+    }
+    .icon-btn svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
 
-        /* Animation Effects */
-        @keyframes slideIn {
-            0% {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
+    /* Iframe styling */
+    #game-frame {
+      border-radius: 12px;
+      border: 3px solid var(--accent);
+      width: 100%;
+      max-width: 1152px;
+      height: 648px;
+      box-shadow: 0 0 20px var(--accent);
+      transition: box-shadow 0.3s ease, width 0.5s ease, height 0.5s ease;
+      margin-bottom: 2rem;
+    }
+    #game-frame:focus {
+      outline: 2px solid var(--accent);
+      box-shadow: 0 0 30px var(--btn-hover);
+    }
 
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
+    /* Expanded iframe */
+    #game-frame.expanded {
+      width: 150%;
+      max-width: none;
+      height: 972px; /* 648 * 1.5 */
+      box-shadow: 0 0 35px var(--btn-hover);
+    }
 
-        /* Image Button Styling */
-        .play-btn {
-            background: url('https://example.com/play-button.png') no-repeat center center/contain;
-            width: 250px;
-            height: 70px;
-            border: none;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
+    /* Animations */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
 
-        .play-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .play-btn:focus {
-            outline: none;
-        }
-
-    </style>
+  </style>
 </head>
 <body>
-    <!-- Game Title -->
-    <h1>1 On 1 Basketball</h1>
+  <h1>1 On 1 Basketball</h1>
 
-    <!-- Fullscreen Button -->
-    <img src="https://www.svgrepo.com/show/343671/fullscreen.svg" alt="Fullscreen" class="fullscreen-btn" id="fullscreen-btn">
+  <!-- Buttons -->
+  <div class="btn-group">
+    <button id="expand-btn" class="icon-btn" title="Expand Game Frame" aria-pressed="false" aria-label="Expand Game Frame">
+      <!-- Expand icon (arrows pointing out) -->
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h6M4 4v6M20 20h-6M20 20v-6M9 15l-5 5M15 9l5-5"/>
+      </svg>
+    </button>
+    <button id="fullscreen-btn" class="icon-btn" title="Toggle Fullscreen" aria-label="Toggle Fullscreen">
+      <img src="https://www.svgrepo.com/show/343671/fullscreen.svg" alt="Fullscreen" style="width: 100%; height: 100%; filter: invert(1);" />
+    </button>
+  </div>
 
-    <!-- Game iframe -->
-    <iframe id="game-frame" src="https://script.google.com/macros/s/AKfycbwDVKSBVuNK4axJUnLuqHJHWh7EubO4icUJldVaUPoVqjsalm2SB9mCKg7x6f0rU7O6OA/exec" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="648px" width="1151px" allowfullscreen></iframe>
+  <!-- Game iframe -->
+  <iframe
+    id="game-frame"
+    src="https://script.google.com/macros/s/AKfycbwDVKSBVuNK4axJUnLuqHJHWh7EubO4icUJldVaUPoVqjsalm2SB9mCKg7x6f0rU7O6OA/exec"
+    frameborder="0"
+    scrolling="no"
+    allowfullscreen
+    allow="fullscreen"
+  ></iframe>
 
-    <!-- Description -->
-    <p>Experience the thrill of the court with 1 On 1 Basketball Unblocked at Classroom 6x Unblocked Games! Challenge your friends or the computer in a fast-paced, one-on-one basketball showdown. Dribble, shoot, and score your way to victory in this exciting and dynamic sports game. Perfect for quick breaks and honing your skills, 1 On 1 Basketball Unblocked promises endless fun and competition. Join now and see if you have what it takes to become the ultimate basketball champion!</p>
+  <!-- Description -->
+  <p class="description">
+    Experience the thrill of the court with 1 On 1 Basketball Unblocked at Classroom 6x Unblocked Games! Challenge your friends or the computer in a fast-paced, one-on-one basketball showdown. Dribble, shoot, and score your way to victory in this exciting and dynamic sports game. Perfect for quick breaks and honing your skills, 1 On 1 Basketball Unblocked promises endless fun and competition. Join now and see if you have what it takes to become the ultimate basketball champion!
+  </p>
 
-    <script>
-        // Fullscreen toggle function
-        document.getElementById('fullscreen-btn').addEventListener('click', function() {
-            const iframe = document.getElementById('game-frame');
+  <script>
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    const expandBtn = document.getElementById('expand-btn');
+    const iframe = document.getElementById('game-frame');
 
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.mozRequestFullScreen) { // Firefox
-                iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) { // IE/Edge
-                iframe.msRequestFullscreen();
-            }
-        });
-    </script>
+    fullscreenBtn.addEventListener('click', () => {
+      if (!document.fullscreenElement) {
+        if (iframe.requestFullscreen) {
+          iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) {
+          iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) {
+          iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+          iframe.msRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    });
+
+    expandBtn.addEventListener('click', () => {
+      const isExpanded = iframe.classList.toggle('expanded');
+      expandBtn.setAttribute('aria-pressed', isExpanded);
+      if (isExpanded) {
+        expandBtn.title = "Shrink Game Frame";
+        expandBtn.setAttribute('aria-label', "Shrink Game Frame");
+        // optionally change icon to "shrink"
+        expandBtn.innerHTML = `
+          <!-- Shrink icon (arrows pointing in) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 9l-5-5M15 15l5 5M4 20h6M4 20v-6M20 4h-6M20 4v6"/>
+          </svg>
+        `;
+      } else {
+        expandBtn.title = "Expand Game Frame";
+        expandBtn.setAttribute('aria-label', "Expand Game Frame");
+        expandBtn.innerHTML = `
+          <!-- Expand icon (arrows pointing out) -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h6M4 4v6M20 20h-6M20 20v-6M9 15l-5 5M15 9l5-5"/>
+          </svg>
+        `;
+      }
+    });
+  </script>
 </body>
 </html>
