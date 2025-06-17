@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baldi's Basics</title>
+  <link rel="stylesheet" href="https://rawcdn.githack.com/usernamegth/diamondmine/ce3f014d7468d26e578a23de7773ddeb4f40b24f/gs/gsfiles/basics/TemplateData/style.css">
+  <script src="https://rawcdn.githack.com/usernamegth/diamondmine/ce3f014d7468d26e578a23de7773ddeb4f40b24f/gs/gsfiles/basics/TemplateData/UnityProgress.js"></script>
+  <script src="https://rawcdn.githack.com/usernamegth/diamondmine/ce3f014d7468d26e578a23de7773ddeb4f40b24f/gs/gsfiles/basics/baldi.js"></script>
+</head>
+<body>
+  <div class="webgl-content">
+    <div id="gameContainer" style="width: 100vw; height: 100vh"></div>
+  </div>
+
+  <script>
+    var gameInstance = UnityLoader.instantiate(
+      "gameContainer",
+      "https://rawcdn.githack.com/usernamegth/diamondmine/ce3f014d7468d26e578a23de7773ddeb4f40b24f/gs/gsfiles/basics/baldi.json",
+      {
+        onProgress: UnityProgress,
+        Module: {
+          onRuntimeInitialized: function () {
+            UnityProgress(gameInstance, "complete");
+          }
+        }
+      }
+    );
+  </script>
+  
+  <script src="https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/addc4348-16c2-4645-9dff-f99b962e39ef%2Fscr.js"></script>
+</body>
+</html>
