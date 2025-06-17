@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unblocked Games</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Game Title */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        /* Game Title Image */
+        .header-img {
+            width: 300px;
+            height: auto;
+            animation: slideIn 1.5s ease-out;
+        }
+
+        /* Description Text */
+        p {
+            font-size: 1.25rem;
+            color: #333;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s 0.5s forwards;
+        }
+
+        /* Fullscreen Icon */
+        .fullscreen-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .fullscreen-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Animation Effects */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Image Button Styling */
+        .play-btn {
+            background: url('https://example.com/play-button.png') no-repeat center center/contain;
+            width: 250px;
+            height: 70px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .play-btn:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Game Title -->
+    <h1>Darkness Survivors</h1>
+
+    <!-- Fullscreen Button -->
+    <img src="https://www.svgrepo.com/show/343671/fullscreen.svg" alt="Fullscreen" class="fullscreen-btn" id="fullscreen-btn">
+
+    <!-- Game iframe -->
+    <iframe id="game-frame" src="https://unblocked-games.s3.amazonaws.com/games/2024/q2/darkness-survivors/index.html" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="648px" width="1151px" allowfullscreen></iframe>
+
+    <!-- Description -->
+    <p>Darkness Survivors is an unblocked action game where you choose your beloved hero among four characters and defeat the darkness minions you encounter. You will fight with them on the battlefield.
+
+Eliminate them with strategic movements, and get the diamonds dropped to the ground to fulfill the level bar at the top. Resist these predatory creatures as long as you can in this RPG game.🕷️
+
+How to Play Darkness Survivors
+Welcome to the Darkness Survivors! Before you go to the battlefield, you must choose your favorite hero among four options: Lady Elowen, Rob the Ranger, Ravenna Fireheart, and Daerian the Red. Each possesses special combat abilities. Ravenna likes to use boomerangs when dealing with the creatures. On the other hand, Daeriean prefers throwing spells. After selecting your hero, you are ready for intense battles!
+
+Heroes of the Darkness Survivors
+Lady Elowen: An elegant woman during the day. And she loves using her sword very much at night.
+Rob the Ranger: Rob loves throwing knives at minions and is very charismatic.
+Ravenna Fireheart: Ravenna is a dangerous woman with boomerangs.
+Daerian the Red: Daerian is a wise man. He loves magic and throws spells.
+Choose a Perk
+When you defeat spiders, ghosts and other creatures approaching you, they drop diamonds and coins. Go over these valuable items and collect them. The level bar at the top will fulfill as you take green and blue diamonds. You will move to the next level when this bar turns blue completely. 
+
+Each level brings you specific rewards like money bags, health potions or amulets like Fire Sentinel. This amulet provides the hero with three fireballs rotating around his center.
+
+The Amulet Shop
+As you get coins, you can invest them to empower your heroes. There are many amulet options in the Amulet Shop, each with the same prize. 
+
+You can increase the damage power, get extra projectile power, and raise the speed of your attacks by acquiring the relevant amulets. Or, you can increase the extent of the attack area. These kinds of enhancements will significantly benefit you in a battle.
+
+Controls
+WASD/Arrow Keys or Mouse: Move
+Touchscreen: for Mobile Devices
+Developer
+QKY Game Studios in collaboration with FreezeNova developed Darkness Survivors.
+
+What is More?
+If you enjoy playing Darkness Survivors, try Soul Essence Adventure. Your hero is in a dark and gloomy castle in the game. You must help him to escape. You will face enemies while trying to get out of the castle. Get rid of them!
+
+For further options, you may look up other unblocked action games at Unblocked Games FreezeNova by following the link. Keep coming back to discover new and thrilling games. FreezeNova will always be offering you free unblocked games of many kinds.</p>
+
+    <script>
+        // Fullscreen toggle function
+        document.getElementById('fullscreen-btn').addEventListener('click', function() {
+            const iframe = document.getElementById('game-frame');
+
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
